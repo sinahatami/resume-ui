@@ -1,0 +1,21 @@
+<div class="fab-container">
+    <button mat-fab class="fab-toggler" (click)="onToggleFab()">
+        <fa-icon transform="rotate-{{degree}}" [icon]="faArrowDown" [@fabToggler]="{value: fabTogglerState}"></fa-icon> <!-- Animation here -->
+    </button>
+    <div [@speedDialStagger]="fabTogglerState == 'active'">
+        <ng-container *ngIf="fabTogglerState == 'active'">
+            <button mat-mini-fab class="fab-secondary" color="secondary" (click)="goToRoute('isnsta')">
+                <fa-icon [icon]="faInstagram"></fa-icon>
+            </button>
+            <button mat-mini-fab class="fab-secondary" color="secondary" (click)="goToRoute('isnsta')">
+                <fa-icon [icon]="faInstagram"></fa-icon>
+            </button>
+            <button mat-mini-fab class="fab-secondary" color="secondary" (click)="goToRoute('isnsta')">
+                <fa-icon [icon]="faInstagram"></fa-icon>
+            </button>
+            <button mat-mini-fab class="fab-secondary" color="secondary" (click)="goToRoute('isnsta')">
+                <fa-icon [icon]="faInstagram"></fa-icon>
+            </button>
+        </ng-container>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+header {
+  width: 100%;
+  height: 100vh;
+  background: url(https://wallpaper.wiki/wp-content/uploads/2017/05/wallpaper.wiki-Beautiful-Full-HD-Wallpaper-Download-Free-PIC-WPE0010098.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.body {
+  background: #101010;
+  color: #E2E2E2;
+}
+
+::ng-deep .toast-message a {
+  color: #fffa58 !important;  
+}
+
+::ng-deep .toast-message a:hover {
+  color: blue !important;  
+}

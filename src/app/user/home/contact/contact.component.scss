@@ -1,0 +1,143 @@
+.header {
+  margin-bottom: 83px;
+  text-align: center;
+  margin-top: 115px;
+}
+
+.body {
+  width: 73%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.first-header {
+  font-size: 15px;
+  margin-bottom: 17px;
+}
+
+.second-header {
+  font-size: 46px;
+  margin-bottom: 37px;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: -.25px;
+  line-height: 100%;
+  position: relative;
+  z-index: 9;
+  color: #f0f0f0;
+}
+
+.animated-bar {
+  background-color: #009e66;
+  display: block;
+  height: 4px;
+  left: 0;
+  margin: 0 auto 0 auto;
+  position: relative;
+  right: 0;
+  width: 75px;
+}
+
+.animated-bar::before {
+  left: 8px;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-name: barAnimation;
+  animation-timing-function: linear;
+  background-color: #101010;
+  content: '';
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 4px;
+}
+
+.animated-bar::after {
+  left: 0;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-name: barAnimation;
+  animation-timing-function: linear;
+  background-color: #101010;
+  content: '';
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 4px;
+}
+
+.form-card {
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0px 0px 13px #3e9f66;
+}
+
+.mat-form-field {
+  display: block;
+}
+
+.body-form {
+  padding: 20px 25px;
+}
+
+:host ::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: #3e9f66 !important;
+}
+
+:host ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: #2d8d55 !important;
+}
+
+textarea {
+  height: 60px;
+  overflow-y: scroll !important;
+}
+
+
+.btn-grad {
+  background-image: linear-gradient(to right, #1D976C 0%, #93F9B9 51%, #1D976C 100%)
+}
+
+.btn-grad {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-submit {
+  background-image: linear-gradient(to right, #1D976C 0%, #93F9B9 51%, #1D976C 100%);
+  margin: 10px;
+  padding: 5px 55px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  outline: none !important;
+}
+
+.btn-submit:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+:host ::ng-deep .mat-input-element {
+    caret-color: #3E9F66 !important;
+}

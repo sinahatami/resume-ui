@@ -1,0 +1,20 @@
+.body {
+  background-color: rgb(53 84 66);
+  color: white;
+  position: sticky;
+}
+
+.container-lg>.row {
+  margin: 0 auto;
+  width: 410px;
+}
+
+.container-lg {
+  height: inherit;
+  padding: 5px;
+}
+
+fa-icon {
+  font-size: 33px;
+  cursor: pointer;
+}

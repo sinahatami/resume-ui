@@ -1,0 +1,91 @@
+<div>
+
+    <div class="header">
+
+        <p class="first-header">Feel free to contact me anytimes</p>
+        <h2 class="second-header" data-aos="fade-top">Get in Touch</h2>
+        <div class="animated-bar"></div>
+
+    </div>
+
+    <div class="container-lg" style="padding-bottom: 100px;">
+
+        <div class="body">
+
+            <mat-card>
+    
+                <form class="body-form" [formGroup]="form">
+    
+                    <mat-form-field>
+                        <mat-label>name</mat-label>
+                        <input matInput placeholder="Sina Hatami" formControlName="name">
+                        <ng-container *ngIf="name.invalid && (name.dirty || name.touched || submitSelected)">
+                            <mat-error *ngIf="name.errors.required">
+                                Please enter a name
+                            </mat-error>
+                            <mat-error *ngIf="name.errors.maxlength">
+                                name must be at max {{ name.errors.maxlength.requiredLength }} characters long. but
+                                {{ name.errors.maxlength.actualLength }} characters long.
+                            </mat-error>
+                        </ng-container>
+                    </mat-form-field>
+    
+                    <mat-form-field>
+                        <mat-label>phone</mat-label>
+                        <span matPrefix>+ &nbsp;</span>
+                        <input type="tel" matInput placeholder="98912XXXXXXX" formControlName="phone">
+                    </mat-form-field>
+    
+                    <mat-form-field>
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Ex.pat@gmail.com" formControlName="email">
+                        <ng-container *ngIf="email.invalid && (email.dirty || email.touched || submitSelected)">
+                            <mat-error *ngIf="email.errors.required">
+                                Please enter an email
+                            </mat-error>
+                            <mat-error *ngIf="email.errors.email">
+                                Please enter a valid email
+                            </mat-error>
+                        </ng-container>
+                    </mat-form-field>
+    
+                    <mat-form-field>
+                        <mat-label>Subject</mat-label>
+                        <input matInput placeholder="about what..." formControlName="subject">
+                        <ng-container *ngIf="subject.invalid && (subject.dirty || subject.touched || submitSelected)">
+                            <mat-error *ngIf="subject.errors.required">
+                                Please enter a subject
+                            </mat-error>
+                            <mat-error *ngIf="subject.errors.maxlength">
+                                subject must be at max {{ subject.errors.maxlength.requiredLength }} characters long. but
+                                {{ subject.errors.maxlength.actualLength }} characters long.
+                            </mat-error>
+                        </ng-container>
+                    </mat-form-field>
+    
+                    <mat-form-field>
+                        <mat-label>Comment</mat-label>
+                        <textarea matInput placeholder="Ex. It makes me feel..." formControlName="comment"></textarea>
+                        <ng-container *ngIf="comment.invalid && (comment.dirty || comment.touched || submitSelected)">
+                            <mat-error *ngIf="comment.errors.required">
+                                Please enter a comment
+                            </mat-error>
+                            <mat-error *ngIf="comment.errors.maxlength">
+                                comment must be at max {{ comment.errors.maxlength.requiredLength }} characters long. but
+                                {{ comment.errors.maxlength.actualLength }} characters long.
+                            </mat-error>
+                        </ng-container>
+                    </mat-form-field>
+    
+                    <button mat-raised-button class="btn-submit" (click)="submit()">Send</button>
+    
+    
+                </form>
+    
+            </mat-card>
+    
+        </div>
+
+    </div>
+
+</div>
