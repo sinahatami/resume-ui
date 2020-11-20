@@ -1,3 +1,4 @@
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ContactComponent } from './home/contact/contact.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { AboutComponent } from './home/about/about.component';
@@ -16,7 +17,10 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SpeedDialFabComponent } from './home/speed-dial-fab/speed-dial-fab.component';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
-
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { ContactService } from './home/contact/contact.service'
+import { CustomHttpInterceptor } from 'src/providers/http.interceptor';
+import { BlogService } from './blog/blog.service';
 
 @NgModule({
   declarations: [
@@ -33,16 +37,25 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
     FontAwesomeModule,
     MatButtonModule,
     CommonModule,
+    HttpClientModule,
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    ToastrModule.forRoot({ closeButton: true, }),
+    ToastrModule.forRoot({ closeButton: true }),
+    MatPaginatorModule,
     FormsModule,
     ReactiveFormsModule,
     routing
   ],
   providers: [
-    ToastrService
+    BlogService,
+    ToastrService,
+    ContactService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CustomHttpInterceptor,
+      multi: true
+    }
   ]
 })
 export class UserModule { }

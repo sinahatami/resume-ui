@@ -1,1 +1,50 @@
-<p>blog works!</p>
+<div class="body">
+
+    <div class="body-blog">
+
+        <mat-card>
+
+            <div class="post">
+
+                <ng-container *ngFor="let item of model; let i = index">
+
+                    <div class="post-body-border mt-3">
+
+                        <div class="post-body">
+
+                            <div class="header-post text-center">
+
+                                <h2>{{ item.title }}</h2>
+
+                            </div>
+
+                            <div class="post-img">
+                                <img [src]="item.image" [alt]="item.title">
+                            </div>
+
+                            <div class="post-description text-left">
+                                <p>{{ item.description }}</p>
+                            </div>
+
+                            <div class="post-footer text-right">
+                                <button (click)="onClickPost(item.id)" class="download-btn" mat-flat-button
+                                    color="primary">download CV
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </ng-container>
+
+                <mat-paginator (page)="page($event)" class="mt-4" [length]="40" [pageSize]="resultsPerPage"
+                    [pageSizeOptions]="[10, 20, 30, 40]">
+                </mat-paginator>
+            </div>
+
+        </mat-card>
+
+    </div>
+
+</div>

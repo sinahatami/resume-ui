@@ -20,4 +20,9 @@ export class AboutComponent implements OnInit {
     });
   }
 
+  downloadResume() {
+//    const blob = new Blob([fileSrc], { type: 'text/pdf' });
+ //   const url = window.URL.createObjectURL(blob);
+   // window.open(url);
+  }
 }

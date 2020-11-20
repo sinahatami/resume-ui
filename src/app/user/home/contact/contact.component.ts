@@ -1,3 +1,4 @@
+import { ContactService } from './contact.service';
 import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
@@ -32,11 +33,23 @@ export class ContactComponent implements OnInit {
   submit = () => {
     this.submitSelected = true
     if (!this.form.valid) {
-      this.toastr.error('Operation encountered an error, Please fill the form correctly', 'Faild', {
+      return this.toastr.error('Operation encountered an error, Please fill the form correctly', 'Faild', {
         positionClass: 'toast-center-center',
         disableTimeOut: true
       })
     }
+
+    this.contactService.postContact(this.form.value).subscribe(_ => {
+      this.toastr.success('Operation generated successfuly. thank you very much', 'success'), {
+        positionClass: 'toast-center-center',
+        disableTimeOut: true
+      }
+      this.submitSelected = false
+      this.form.reset()
+    }, _ => this.toastr.error('Operation encountered an error, Please try again later', 'Faild', {
+      positionClass: 'toast-center-center',
+      disableTimeOut: true
+    }))
 
 
   }
@@ -44,5 +57,5 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  constructor(private formBuilder: FormBuilder, private toastr: ToastrService) { }
+  constructor(private formBuilder: FormBuilder, private toastr: ToastrService, private contactService: ContactService) { }
 }

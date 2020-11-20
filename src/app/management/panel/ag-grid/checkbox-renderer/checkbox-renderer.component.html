@@ -1,0 +1,4 @@
+<input *ngIf="params&&params.enabled" type="checkbox" (change)="onChange($event)"
+    [(ngModel)]="params.data[params.colDef.field]">
+<input *ngIf="params&&!params.enabled" type="checkbox" disabled (change)="onChange($event)"
+    [(ngModel)]="params.data[params.colDef.field]">

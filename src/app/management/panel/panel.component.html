@@ -1,0 +1,64 @@
+<h1 *ngIf="showFormTimeline">adades</h1>
+<div class="body">
+
+  <div class="img-cover">
+
+    <div class="div-mat-card">
+
+      <mat-card>
+
+        <mat-tab-group animationDuration="0ms" class="mock-browser" (selectedTabChange)="onTabChange($event)">
+
+          <!-- POSTS -->
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <div class="tab-title">Posts</div>
+            </ng-template>
+            <div class="tab-body">
+              <ag-grid-angular [frameworkComponents]="frameworkComponents" class="ag-theme-alpine-dark"
+                [gridOptions]="gridOptionsBlog">
+              </ag-grid-angular>
+            </div>
+          </mat-tab>
+
+          <!-- CONTACT -->
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <div class="tab-title">Contacts</div>
+            </ng-template>
+            <div class="tab-body">
+              <ag-grid-angular [frameworkComponents]="frameworkComponents" class="ag-theme-alpine-dark"
+                [gridOptions]="gridOptionsContact">
+              </ag-grid-angular>
+            </div>
+          </mat-tab>
+
+          <!-- TIMELINE -->
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <div class="tab-title">Timeline</div>
+            </ng-template>
+            <div class="tab-body">
+              <ag-grid-angular [frameworkComponents]="frameworkComponents" class="ag-theme-alpine-dark"
+                [gridOptions]="gridOptionsTimeline">
+              </ag-grid-angular>
+            </div>
+          </mat-tab>
+
+        </mat-tab-group>
+
+        <div *ngIf="showFormBlog" class="panel-form">
+          <blog-form [id]="BlogID" [formType]="formTypeBlog" (done)="onGetBlog()" (hide)="hideFormBlog()">
+          </blog-form>
+        </div>
+
+        <timelie-form *ngIf="showFormTimeline">
+        </timelie-form>
+
+      </mat-card>
+    </div>
+
+  </div>
+
+
+</div>

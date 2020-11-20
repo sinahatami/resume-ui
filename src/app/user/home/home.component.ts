@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   constructor(private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    localStorage.clear()
     let linkElement = '<a href="http://github.com/sinahatami/resume-ui">github</a>'
     this.toastr.info(`fork me on ${linkElement}`, 'Fork Me!', {
       positionClass: 'toast-bottom-right',
