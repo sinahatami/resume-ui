@@ -1,28 +1,24 @@
 <div class="body">
 
-    <div class="container-lg">
+  <div class="container">
 
-        <div class="row">
+    <div class="row">
 
-            <div class="col-sm-3">
-                <fa-icon stackItemSize="20px" [icon]="faInstagram"></fa-icon>
-            </div>
-            <div class="col-sm-3">
-                <fa-icon [icon]="faInstagram"></fa-icon>
-            </div>
-            <div class="col-sm-3">
-                <fa-icon [icon]="faInstagram"></fa-icon>
-            </div>
-            <div class="col-sm-3">
-                <fa-icon [icon]="faInstagram"></fa-icon>
-            </div>
-
-        </div>
+      <div class="col-3">
+        <fa-icon (click)="navigate('mail')" style="color: red" [icon]="faMailBulk"></fa-icon>
+      </div>
+      <div class="col-3">
+        <fa-icon (click)="navigate('linkedin')" style="color: #0C66C2;" [icon]="faLinkedin"></fa-icon>
+      </div>
+      <div class="col-3">
+        <fa-icon (click)="navigate('github')" [icon]="faGithub"></fa-icon>
+      </div>
+      <div class="col-3">
+        <fa-icon (click)="navigate('telegram')" style="color: #5682A3;" [icon]="faTelegram"></fa-icon>
+      </div>
 
     </div>
 
-    <a href="">
-        
-    </a>
-    
+  </div>
+
 </div>

@@ -1,5 +1,5 @@
 .body {
-  background-color: rgb(53 84 66);
+  background-color: black;
   color: white;
   position: sticky;
 }
@@ -18,4 +18,8 @@
 fa-icon {
   font-size: 33px;
   cursor: pointer;
+}
+
+.col-3 {
+  text-align: center;
 }

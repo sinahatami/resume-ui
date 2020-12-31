@@ -1,4 +1,5 @@
-import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/providers/auth.service';
+import { Router } from '@angular/router';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
@@ -10,7 +11,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 export class NavbarComponent implements OnInit {
   faBars = faBars
 
-  constructor(private router: Router, private activeRoute: ActivatedRoute) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -30,5 +31,10 @@ export class NavbarComponent implements OnInit {
   scrollTo(item) {
     let el = document.getElementById(item)
     this.scrollEmit.emit(el)
+  }
+
+  navigate(url?: string) {
+    localStorage.wantToRoute = url
+    this.authService.navigateTo(url)
   }
 }

@@ -1,0 +1,64 @@
+.post {
+  width: 100%;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.mat-card-post {
+  margin-top: 50px;
+}
+
+.post-img {
+  width: 640px;
+}
+
+.key {
+  font-size: 20px;
+  color: #3d113d;
+  font-weight: bold;
+}
+
+.value {
+  font-size: 17px;
+  font-style: italic;
+  color: #0f1b46;
+}
+
+.body {
+  color: #e2e2e2;
+  padding: 92px 275px;
+  background: linear-gradient(-70deg, #0e1229, #2f1921, #1e343b, #5e6060) !important;
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.comment-card {
+  color: white;
+  background-color: #180a18;
+  border-radius: 5px;
+}
+
+.username-comment {
+  height: 23px;
+}
+
+.publish-date-comment {
+}
+
+.comment-btn {
+  margin: 60px 0 15px 0;
+  background-color: #2d0650;
+  color: white;
+}

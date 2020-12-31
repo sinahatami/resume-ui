@@ -1,21 +1,17 @@
 .body {
-  background: #101010;
-  color: #E2E2E2;
-  padding: 240px;
+  color: #e2e2e2;
+  background: linear-gradient(-70deg, #0e1229, #2f1921, #1e343b, #5e6060) !important;
+  animation: gradient 15s ease infinite;
+  min-height: 100%;
 }
 
-.post {
-  width: 62%;
-  margin: 0 auto;
-}
-
-.post-body {
+.post-img {
   text-align: center;
 }
 
 .post-img>img {
   height: 460px;
-  width: 100%;
+  max-width: 100%;
   border-radius: 40px;
 }
 
@@ -23,19 +19,39 @@
   padding: 25px 0;
 }
 
+p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+}
+
+:host ::ng-deep mat-card {
+  margin: 150px auto;
+  width: 50%;
+  overflow: hidden;
+}
+
 .post-body-border {
   box-shadow: 0 0 58px #8a8a8a;
   padding: 31px 42px;
   border: 2px solid darkgrey;
   border-radius: 20px;
-  background: #002907;
   color: white;
 }
 
 :host ::ng-deep .mat-paginator {
+  .mat-paginator-container {
+    width: unset !important;
+    margin: 0 auto !important;
+  }
   background: unset !important;
 }
 
 button:focus {
   outline: 0 none !important;
+}
+
+.publish-date {
+  color: #585858;
 }

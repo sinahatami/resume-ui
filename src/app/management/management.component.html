@@ -1,0 +1,67 @@
+<div class="h-100">
+  <div class="body">
+    <div class="container-fluid">
+      <div class="row">
+        <mat-card>
+          <mat-tab-group (focusChange)="onTabChange($event)">
+            <!-- POSTS -->
+            <mat-tab label="Posts">
+              <div [class.disabledTab]="formTypeBlog" class="tab-body">
+                <ag-grid-angular
+                  [frameworkComponents]="frameworkComponents"
+                  class="ag-theme-alpine-dark"
+                  [gridOptions]="gridOptionsBlog"
+                ></ag-grid-angular>
+              </div>
+            </mat-tab>
+
+            <!-- CONTACT -->
+            <mat-tab label="Contacts">
+              <div class="tab-body">
+                <ag-grid-angular
+                  [frameworkComponents]="frameworkComponents"
+                  class="ag-theme-alpine-dark"
+                  [gridOptions]="gridOptionsContact"
+                ></ag-grid-angular>
+              </div>
+            </mat-tab>
+
+            <!-- TIMELINE -->
+            <mat-tab label="Timeline">
+              <div class="tab-body">
+                <ag-grid-angular
+                  [frameworkComponents]="frameworkComponents"
+                  class="ag-theme-alpine-dark"
+                  [gridOptions]="gridOptionsTimeline"
+                ></ag-grid-angular>
+              </div>
+            </mat-tab>
+
+            <!-- COMMENTS -->
+            <mat-tab label="Comment">
+              <div class="tab-body">
+                <ag-grid-angular
+                  [frameworkComponents]="frameworkComponents"
+                  class="ag-theme-alpine-dark"
+                  [gridOptions]="gridOptionsComment"
+                ></ag-grid-angular>
+              </div>
+            </mat-tab>
+          </mat-tab-group>
+
+          <div *ngIf="showFormBlog" class="panel-form">
+            <blog-form [id]="BlogID" [formType]="formTypeBlog" (done)="onGetBlog()" (hide)="hideFormBlog()"></blog-form>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+<timelie-form
+  [ID]="TimelineID"
+  *ngIf="showFormTimeline"
+  (hide)="hideFormTimeline()"
+  (saved)="onGetTimeline()"
+  [formType]="formTypeTimeline"
+></timelie-form>

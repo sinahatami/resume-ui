@@ -1,3 +1,4 @@
+import { NgxSmartModalModule } from 'ngx-smart-modal';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ContactComponent } from './home/contact/contact.component';
 import { FooterComponent } from './home/footer/footer.component';
@@ -14,13 +15,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SpeedDialFabComponent } from './home/speed-dial-fab/speed-dial-fab.component';
-import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { ContactService } from './home/contact/contact.service'
-import { CustomHttpInterceptor } from 'src/providers/http.interceptor';
 import { BlogService } from './blog/blog.service';
+import { TimelineService } from './home/timeline/timeline.service';
+import { ParallaxModule } from 'ngx-parallax';
+import { ProviderModule } from 'src/providers/provider.module';
+import { PostComponent } from './blog/post/post.component';
+import { PostService } from './blog/post/post.service';
 
 @NgModule({
   declarations: [
@@ -31,31 +35,31 @@ import { BlogService } from './blog/blog.service';
     AboutComponent,
     FooterComponent,
     ContactComponent,
-    SpeedDialFabComponent
+    PostComponent,
   ],
   imports: [
+    ProviderModule,
     FontAwesomeModule,
-    MatButtonModule,
     CommonModule,
     HttpClientModule,
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    ToastrModule.forRoot({ closeButton: true }),
+    MatButtonModule,
     MatPaginatorModule,
+    ToastrModule.forRoot({ closeButton: true }),
     FormsModule,
     ReactiveFormsModule,
+    ParallaxModule,
+    NgxSmartModalModule.forRoot(),
     routing
   ],
   providers: [
     BlogService,
+    PostService,
+    TimelineService,
     ToastrService,
     ContactService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: CustomHttpInterceptor,
-      multi: true
-    }
   ]
 })
 export class UserModule { }

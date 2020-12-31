@@ -1,0 +1,90 @@
+.body {
+  background-color: #585858;
+  height: 100vh;
+}
+
+.left-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.header-title {
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.787) !important;
+}
+
+.right-side {
+  background-image: url('../../assets/images/auth.jpg');
+  background-size: cover;
+  position: absolute;
+  width: 98.9%;
+  min-height: 100vh;
+}
+
+.img-cover {
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg');
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+form {
+  width: 100%;
+  padding: 13px;
+  border: 2px solid #ffffff3b;
+  background: #3c3c3c69;
+  border-radius: 15px;
+  box-shadow: 4px 3px 9px 0px #81b3ff;
+}
+
+:host ::ng-deep .mat-input-element {
+  color: white !important;
+}
+
+.btn-submit {
+  background-color: #041d63;
+  margin: 12px 0px 15px 0px;
+}
+
+:host ::ng-deep mat-card {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: auto;
+  margin: auto;
+  height: 300px;
+  max-width: 480px;
+  background-color: #32791b69;
+  color: #fff;
+  text-align: center;
+}
+
+:host ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label {
+  color: white;
+}
+
+:host ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: white;
+}
+
+.titles {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.p-title {
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+  cursor: pointer !important;
+}

@@ -1,0 +1,77 @@
+<div class="container-fluid">
+  <div class="row" [formGroup]="form" [class.disabledForm]="formType === 'View'">
+    <div class="col-md-4">
+      <div class="">
+        <div class="col-sm-12 float-left col-fields">
+          <mat-form-field>
+            <mat-label>title</mat-label>
+            <input matInput placeholder="title form blog post" formControlName="title" />
+            <ng-container *ngIf="title.invalid && (title.dirty || title.touched || submitSelected)">
+              <mat-error *ngIf="title.errors.required">Please enter a title</mat-error>
+              <mat-error *ngIf="title.errors.maxlength">
+                title must be at max {{ title.errors.maxlength.requiredLength }} characters long. but {{ title.errors.maxlength.actualLength }} characters long.
+              </mat-error>
+            </ng-container>
+          </mat-form-field>
+        </div>
+
+        <div class="col-sm-12 float-left col-fields">
+          <mat-form-field>
+            <mat-label>description</mat-label>
+            <textarea matInput placeholder="description form blog post" formControlName="description"></textarea>
+            <ng-container *ngIf="description.invalid && (description.dirty || description.touched || submitSelected)">
+              <mat-error *ngIf="description.errors.required">Please enter a description</mat-error>
+              <mat-error *ngIf="description.errors.maxlength">
+                description must be at max {{ description.errors.maxlength.requiredLength }} characters long. but {{ description.errors.maxlength.actualLength }} characters long.
+              </mat-error>
+            </ng-container>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 text-center">
+      <div class="col-sm-12">
+        <div class="upload-btn-wrapper">
+          <button mat-raised-button class="upload-btn">Upload a file</button>
+          <input type="file" id="attach" (change)="onAttachImage($event.target.files)" />
+        </div>
+      </div>
+
+      <div class="col-sm-12" *ngIf="srcImg">
+        <div [class.image-container]="isUploaded" class="image-width mt-3">
+          <img [src]="srcImg" class="image" />
+          <div *ngIf="isUploaded" [class.middle]="isUploaded">
+            <button mat-fab color="warn" title="remove image">
+              <fa-icon [icon]="faTrash" (click)="removePhoto()"></fa-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="">
+        <div class="col-sm-12 float-left col-fields">
+          <div class="checkbox">
+            <mat-checkbox class="example-margin" formControlName="status">status</mat-checkbox>
+          </div>
+        </div>
+
+        <div class="col-sm-12 float-left col-fields date-col">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="publishDate" formControlName="publishDate">
+            <mat-datepicker-toggle matSuffix [for]="publishDate"></mat-datepicker-toggle>
+            <mat-datepicker touchUi #publishDate></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-5 text-center">
+    <button mat-raised-button color="primary" style="margin-right: 15px" (click)="saveMethod()">save</button>
+    <button mat-raised-button color="warn" (click)="hideForm()">cancel</button>
+  </div>
+</div>

@@ -1,3 +1,5 @@
+import { faForward } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router'
 import { BlogService } from './blog.service'
 import { Component, OnInit } from '@angular/core'
 import { BlogModel } from './blog.model'
@@ -8,6 +10,8 @@ import { BlogModel } from './blog.model'
   styleUrls: ['./blog.component.scss'],
 })
 export class BlogComponent implements OnInit {
+  faForward = faForward
+
   resultsPerPage: number = 10
   pageIndex: number = 0
   page(event) {
@@ -17,15 +21,17 @@ export class BlogComponent implements OnInit {
   }
 
   getPosts() {
-    this.blogService.get(this.pageIndex, this.resultsPerPage).subscribe((res: BlogModel) => (this.model = res))
+    this.blogService.getByPagination(this.pageIndex, this.resultsPerPage).subscribe((res: BlogModel) => (this.model = res))
   }
 
-  constructor(private blogService: BlogService) {}
+  constructor(private router: Router, private blogService: BlogService) { }
 
   model: BlogModel
   ngOnInit(): void {
     this.getPosts()
   }
 
-  onClickPost(id) {}
+  onClickPost(id) {
+    this.router.navigate(["blog", id])
+  }
 }

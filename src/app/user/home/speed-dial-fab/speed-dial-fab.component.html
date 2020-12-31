@@ -1,21 +1,28 @@
-<div class="fab-container">
-    <button mat-fab class="fab-toggler" (click)="onToggleFab()">
+<div class="fab-container" *ngIf="activeUrl == '/'">
+  <button style="background-color: #265F14;" mat-fab class="fab-toggler" (click)="onToggleFab()">
         <fa-icon transform="rotate-{{degree}}" [icon]="faArrowDown" [@fabToggler]="{value: fabTogglerState}"></fa-icon> <!-- Animation here -->
     </button>
-    <div [@speedDialStagger]="fabTogglerState == 'active'">
-        <ng-container *ngIf="fabTogglerState == 'active'">
-            <button mat-mini-fab class="fab-secondary" color="secondary" (click)="goToRoute('isnsta')">
-                <fa-icon [icon]="faInstagram"></fa-icon>
+  <div [@speedDialStagger]="fabTogglerState == 'active'">
+    <ng-container *ngIf="fabTogglerState == 'active'">
+      <button (click)="navigate('mail')" mat-mini-fab class="fab-secondary" color="secondary">
+                <fa-icon style="color: red" [icon]="faMailBulk">
+                </fa-icon>
+          </button>
+      <button (click)="navigate('linkedin')" mat-mini-fab class="fab-secondary" color="secondary">
+                    <fa-icon style="color: #0C66C2;" [icon]="faLinkedin"></fa-icon>
+                </button>
+      <button (click)="navigate('github')" mat-mini-fab class="fab-secondary" color="secondary">
+                <fa-icon [icon]="faGithub"></fa-icon>
             </button>
-            <button mat-mini-fab class="fab-secondary" color="secondary" (click)="goToRoute('isnsta')">
-                <fa-icon [icon]="faInstagram"></fa-icon>
+      <button (click)="navigate('telegram')" mat-mini-fab class="fab-secondary" color="secondary">
+                <fa-icon style="color: #5682A3;" [icon]="faTelegram"></fa-icon>
             </button>
-            <button mat-mini-fab class="fab-secondary" color="secondary" (click)="goToRoute('isnsta')">
-                <fa-icon [icon]="faInstagram"></fa-icon>
-            </button>
-            <button mat-mini-fab class="fab-secondary" color="secondary" (click)="goToRoute('isnsta')">
-                <fa-icon [icon]="faInstagram"></fa-icon>
-            </button>
-        </ng-container>
-    </div>
+    </ng-container>
+  </div>
+</div>
+
+<div class="fab-container" *ngIf="activeUrl != '/'">
+  <button (click)="logout()" style="background-color: rgb(212, 44, 44);" mat-fab class="fab-toggler">
+    <fa-icon [icon]="faSignOutAlt"></fa-icon>
+  </button>
 </div>

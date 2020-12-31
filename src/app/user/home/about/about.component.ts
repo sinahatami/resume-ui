@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faTelegram, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faMailBulk } from '@fortawesome/free-solid-svg-icons';
 import * as AOS from 'aos'
 
 @Component({
@@ -8,8 +9,10 @@ import * as AOS from 'aos'
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-
-  faInstagram = faInstagram
+  faMailBulk = faMailBulk
+  faGithub = faGithub
+  faLinkedin = faLinkedin
+  faTelegram = faTelegram
   personalImg = "../../../../assets/images/personal-photo.jpg"
 
   constructor() { }
@@ -17,12 +20,27 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
     AOS.init({
       duration: 2500,
+      disable: function () {
+        var maxWidth = 800;
+        return window.innerWidth < maxWidth;
+      }
     });
   }
 
-  downloadResume() {
-//    const blob = new Blob([fileSrc], { type: 'text/pdf' });
- //   const url = window.URL.createObjectURL(blob);
-   // window.open(url);
+  navigate(type) {
+    switch (type) {
+      case 'mail':
+        window.location.href = 'mailto:sina13781999@gmail.com'
+        break
+      case 'telegram':
+        window.open('https://web.telegram.org/#/im?p=%40sina_ht')
+        break
+      case 'linkedin':
+        window.open('http://www.linkedin.com/in/sina-hatami')
+        break
+      case 'github':
+        window.open('http://www.github.com/sinahatami')
+        break
+    }
   }
 }

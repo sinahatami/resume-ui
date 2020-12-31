@@ -1,12 +1,7 @@
-import { LoginComponent } from './login/login.component'
 import { Routes, RouterModule } from '@angular/router'
-import { PanelComponent } from './panel/panel.component'
-import { AuthorizationGuardService } from 'src/providers/authorization.service'
+import { AuthGuard } from 'src/providers/auth.guard'
+import { ManagementComponent } from './management.component'
 
-const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'panel', component: PanelComponent, /* canActivate: [AuthorizationGuardService] */ },
-]
+const routes: Routes = [{ path: '', component: ManagementComponent, canActivate: [AuthGuard] }]
 
 export const routing = RouterModule.forChild(routes)

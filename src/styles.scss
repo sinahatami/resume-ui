@@ -1,6 +1,6 @@
-@import "~ag-grid-community/src/styles/ag-grid.scss";
-@import "~ag-grid-community/src/styles/ag-theme-alpine-dark/sass/ag-theme-alpine-dark.scss";
-@import "~ngx-smart-modal/ngx-smart-modal";
+@import '~ag-grid-community/src/styles/ag-grid.scss';
+@import '~ag-grid-community/src/styles/ag-theme-alpine-dark/sass/ag-theme-alpine-dark.scss';
+@import '~ngx-smart-modal/ngx-smart-modal';
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -12,27 +12,30 @@ body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
-@import "~bootstrap/dist/css/bootstrap.css";
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import '~aos/dist/aos.css';
-@import "~ngx-toastr/toastr.css";
-
+@import '~ngx-toastr/toastr.css';
 ::-webkit-scrollbar {
   width: 10px !important;
 }
 
+
 /* Track */
+
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px black !important;
   border-radius: 10px !important;
 }
 
+
 /* Handle */
+
 ::-webkit-scrollbar-thumb {
-  background: #3E9F66 !important;
+  background: #3e9f66 !important;
   border-radius: 10px !important;
 }
 
@@ -41,5 +44,46 @@ body {
 }
 
 .mat-input-element {
-  caret-color: #3E9F66 !important;
+  caret-color: #3e9f66 !important;
+}
+
+.ag-row-focus {
+  background-color: #696969 !important;
+  color: white;
+}
+
+
+/* .ag-theme-balham .ag-row-odd {
+  background-color: #818181;
+} */
+
+.ag-theme-balham .ag-row-selected {
+  background-color: #182e3b;
+}
+
+.ag-row {
+  cursor: pointer;
+}
+
+.ag-root-wrapper {
+  border-radius: 4px;
+}
+
+.toast-info {
+  background-color: #1b5f13;
+}
+
+.ag-row-focus {
+  background-color: #265f14 !important;
+  color: white;
+}
+
+.disabledTab {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.disabledForm {
+  opacity: 0.8;
+  pointer-events: none;
 }

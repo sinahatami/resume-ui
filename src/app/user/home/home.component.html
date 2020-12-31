@@ -1,30 +1,28 @@
 <div class="body">
 
-    <!-------------------------NAVBAR----------------------->
-    <header id="home">
-        <navbar (scrollEmit)="changeScroll($event)"></navbar>
-    </header>
+  <!-------------------------NAVBAR----------------------->
+  <header parallax [config]="{initialValue: -10, ratio: .7}" id="home" data-parallax="scroll">
+    <navbar (scrollEmit)="changeScroll($event)"></navbar>
+  </header>
 
-    <!-------------------------ABOUT----------------------->
-    <div id="about" class="about">
-        <about></about>
-    </div>
+  <!-------------------------ABOUT----------------------->
+  <div id="about" class="about">
+    <about></about>
+  </div>
 
-    <!-------------------------TIMELINE----------------------->
-    <div id="timeline">
-        <timeline></timeline>
-    </div>
+  <!-------------------------TIMELINE----------------------->
+  <div id="timeline">
+    <timeline></timeline>
+  </div>
 
-    <!-------------------------CONTACT----------------------->
-    <div id="contact">
-        <contact></contact>
-    </div>
+  <!-------------------------CONTACT----------------------->
+  <div id="contact">
+    <contact></contact>
+  </div>
 
-    <!-------------------------FOOTER----------------------->
-    <div class="footer">
-        <footer></footer>
-    </div>
+  <!-------------------------FOOTER----------------------->
+  <div class="footer">
+    <footer></footer>
+  </div>
 
 </div>
-
-<app-speed-dial-fab></app-speed-dial-fab>

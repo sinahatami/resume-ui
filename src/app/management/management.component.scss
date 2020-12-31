@@ -1,0 +1,36 @@
+.body {
+  color: #e2e2e2;
+  background: linear-gradient(-70deg, #0e1229, #2f1921, #1e343b, #5e6060) !important;
+  animation: gradient 15s ease infinite;
+  min-height: 100%;
+}
+
+mat-card {
+  margin: 150px auto;
+  width: 73%;
+}
+
+.tab-body {
+  padding: 50px 19px;
+}
+.tab-title {
+  color: rgb(0, 0, 0);
+  opacity: 1 !important;
+}
+
+:host ::ng-deep .mat-tab-label {
+  opacity: 1 !important;
+}
+
+:host ::ng-deep .mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: #51ab0d !important;
+}
+
+::ng-deep .isTrueStatus {
+  background-color: green !important;
+}
+
+::ng-deep .isFalseStatus {
+  background-color: red !important;
+}

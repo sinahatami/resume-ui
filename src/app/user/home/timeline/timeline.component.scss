@@ -1,10 +1,9 @@
-$title-background: #3d9e67;
-$content-background-color: #67CC8E;
-$content-background-gradient: #56BC83;
+$title-background: #265F14;
+$content-background-color: #265F14;
+$content-background-gradient: #265F14;
 $time-color: #fff;
 $text-color: #fff;
 $content-width: 450px;
-
 *,
 *::before,
 *::after {
@@ -15,42 +14,36 @@ $content-width: 450px;
   box-sizing: border-box;
 }
 
-body{
+body {
   font-size: 16px;
   font-family: 'Lato', sans-serif;
 }
 
-.timeline{
+.timeline {
   color: $text-color;
-  
   h1,
-  ul li .content h2{
+  ul li .content h2 {
     text-shadow: 1px 1px 1px rgba(56, 56, 56, 0.5);
   }
-  
-  h1{
+  h1 {
     background: $title-background;
     padding: 70px 0;
     font-size: 2.5em;
     text-align: center;
   }
-  
-  ul{
+  ul {
     padding: 50px 0;
-    
-    li{
+    li {
       background: $content-background-color;
       position: relative;
       margin: 0 auto;
       width: 5px;
       padding-bottom: 40px;
       list-style-type: none;
-      
-      &:last-child{
+      &:last-child {
         padding-bottom: 7px;
       }
-      
-      &:before{
+      &:before {
         content: '';
         position: absolute;
         left: 50%;
@@ -63,29 +56,25 @@ body{
         -moz-border-radius: 50%;
         border-radius: 50%;
       }
-      
       .hidden {
         opacity: 0;
       }
-      
-      .content{
-        background: $content-background-color; 
+      .content {
+        background: $content-background-color;
         position: relative;
         top: 7px;
         width: $content-width;
         padding: 20px;
-        
-        h2{
+        opacity: 1 !important;
+        h2 {
           color: $time-color;
           padding-bottom: 10px;
           text-align: center;
         }
-        
-        p{
+        p {
           text-align: center;
         }
-        
-        &:before{
+        &:before {
           content: '';
           background: $content-background-color;
           position: absolute;
@@ -94,25 +83,21 @@ body{
           height: 5px;
         }
       }
-      
       &:nth-child(odd) .content {
         left: 50px;
         background: $content-background-color;
-        background: -webkit-linear-gradient(-45deg, $content-background-gradient , $content-background-color);
-        background: linear-gradient(-45deg,  $content-background-gradient , $content-background-color);
+        background: -webkit-linear-gradient(-45deg, $content-background-gradient, $content-background-color);
+        background: linear-gradient(-45deg, $content-background-gradient, $content-background-color);
       }
-      
       &:nth-child(odd) .content:before {
         left: -38px;
       }
-      
       &:nth-child(even) .content {
         left: calc(-#{$content-width} - 45px);
         background: $content-background-color;
-        background: -webkit-linear-gradient(45deg, $content-background-gradient , $content-background-color);
-        background: linear-gradient(45deg,  $content-background-gradient , $content-background-color);
+        background: -webkit-linear-gradient(45deg, $content-background-gradient, $content-background-color);
+        background: linear-gradient(45deg, $content-background-gradient, $content-background-color);
       }
-      
       &:nth-child(even) .content:before {
         right: -38px;
       }
@@ -120,11 +105,15 @@ body{
   }
 }
 
+
 /* -------------------------
-   ----- Media Queries ----- 
+   ----- Media Queries -----
    ------------------------- */
 
 @media screen and (max-width: 1020px) {
+  .content {
+    transform: none !important
+  }
   .timeline ul li .content {
     width: 41vw;
   }
@@ -136,22 +125,18 @@ body{
 @media screen and (max-width: 700px) {
   .timeline ul li {
     margin-left: 20px;
-    
     .content {
       width: calc(100vw - 100px);
-    
-      h2{
+      h2 {
         text-align: initial;
       }
     }
-    
     &:nth-child(even) .content {
       left: 45px;
       background: $content-background-color;
-      background: -webkit-linear-gradient(-45deg, $content-background-gradient , $content-background-color);
-      background: linear-gradient(-45deg,  $content-background-gradient , $content-background-color);
+      background: -webkit-linear-gradient(-45deg, $content-background-gradient, $content-background-color);
+      background: linear-gradient(-45deg, $content-background-gradient, $content-background-color);
     }
-    
     &:nth-child(even) .content:before {
       left: -33px;
     }
@@ -159,12 +144,12 @@ body{
 }
 
 .item {
-    width: 200px;
-    height: 200px;
-    margin: 50px auto;
-    padding-top: 75px;
-    background: #ccc;
-    text-align: center;
-    color: #FFF;
-    font-size: 3em;
-  }
+  width: 200px;
+  height: 200px;
+  margin: 50px auto;
+  padding-top: 75px;
+  background: #ccc;
+  text-align: center;
+  color: #FFF;
+  font-size: 3em;
+}

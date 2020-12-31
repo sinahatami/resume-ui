@@ -1,27 +1,30 @@
 <nav>
-   <div class="menu-icon">
-      <fa-icon class="fa-2x" [icon]="faBars" (click)="changeToggle()"></fa-icon>
-   </div>
-   <div class="logo">
-      <button mat-button (click)="reloadPage()"><a href="" class="logo-ancer">SINA HATAMI</a></button>
-   </div>
-   <div class="menu">
-      <ul [class.showing]="toggle">
-         <li>
-            <button mat-button (click)="scrollTo('home')">Home</button>
-         </li>
-         <li>
-            <button mat-button (click)="scrollTo('about')">About</button>
-         </li>
-         <li>
-            <button mat-button (click)="scrollTo('timeline')">Timeline</button>
-         </li>
-         <li>
-            <button mat-button (click)="scrollTo('contact')">Contact</button>
-         </li>
-         <li>
-            <button mat-button [routerLink]="'blog'">Blog</button>
-         </li>
-      </ul>
-   </div>
+  <div class="menu-icon">
+    <fa-icon class="fa-2x" [icon]="faBars" (click)="changeToggle()"></fa-icon>
+  </div>
+  <div class="logo">
+    <button mat-button (click)="reloadPage()"><a href="" class="logo-ancer">SINA HATAMI</a></button>
+  </div>
+  <div class="menu">
+    <ul [class.showing]="toggle">
+      <li>
+        <button mat-button (click)="scrollTo('home')">Home</button>
+      </li>
+      <li>
+        <button mat-button (click)="scrollTo('about')">About</button>
+      </li>
+      <li>
+        <button mat-button (click)="scrollTo('timeline')">Timeline</button>
+      </li>
+      <li>
+        <button mat-button (click)="scrollTo('contact')">Contact</button>
+      </li>
+      <li>
+        <button mat-button (click)="navigate('management')">Management</button>
+      </li>
+      <li>
+        <button mat-button (click)="navigate('blog')">Blog</button>
+      </li>
+    </ul>
+  </div>
 </nav>

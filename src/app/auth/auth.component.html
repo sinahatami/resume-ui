@@ -1,0 +1,113 @@
+<div class="body">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="left-side">
+          <form [formGroup]="form" class="d-block">
+            <div class="header-title">
+              <h2 *ngIf="formType == 'signup'">Sign Up</h2>
+              <h2 *ngIf="formType == 'signin'">Sign In</h2>
+            </div>
+
+            <mat-form-field class="">
+              <mat-label>username</mat-label>
+              <input matInput placeholder="Sina Hatami" formControlName="username" />
+              <ng-container *ngIf="username.invalid && (username.dirty || username.touched || submitSelected)">
+                <mat-error *ngIf="username.errors.required">Please enter a username</mat-error>
+                <mat-error *ngIf="username.errors.maxlength">
+                  username must be at max {{ username.errors.maxlength.requiredLength }} characters long. but
+                  {{ username.errors.maxlength.actualLength }} characters long.
+                </mat-error>
+              </ng-container>
+            </mat-form-field>
+
+            <mat-form-field class="mt-2">
+              <mat-label>password</mat-label>
+              <input matInput placeholder="Sina Hatami" formControlName="password" type="password" />
+              <ng-container *ngIf="password.invalid && (password.dirty || password.touched || submitSelected)">
+                <mat-error *ngIf="password.errors.required">Please enter a password</mat-error>
+                <mat-error *ngIf="password.errors.maxlength">
+                  password must be at max {{ password.errors.maxlength.requiredLength }} characters long. but
+                  {{ password.errors.maxlength.actualLength }} characters long.
+                </mat-error>
+              </ng-container>
+            </mat-form-field>
+
+            <mat-form-field *ngIf="formType == 'signup'" class="mt-2">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Ex.pat@gmail.com" formControlName="email" />
+              <ng-container *ngIf="email.invalid && (email.dirty || email.touched || submitSelected)">
+                <mat-error *ngIf="email.errors.required">Please enter an email</mat-error>
+                <mat-error *ngIf="email.errors.email">Please enter a valid email</mat-error>
+              </ng-container>
+            </mat-form-field>
+
+            <button (click)="submit()" class="d-block w-100 btn-submit" mat-raised-button color="primary">Submit</button>
+            <div class="titles">
+              <p class="p-title" *ngIf="formType == 'signup'" (click)="changeFormType('toSignIn')">already have account to signin?</p>
+              <p class="p-title" *ngIf="formType == 'signin'" (click)="changeFormType('toSignUp')">havent any account to signin?</p>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="right-side"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="body">
+
+    <div class="img-cover">
+
+        <div class="form mt-5">
+            <mat-card>
+
+                <h2 class="mt-2">Login</h2>
+
+                <form [formGroup]="form">
+
+                    <mat-form-field class="mt-1">
+                        <mat-label>username</mat-label>
+                        <input matInput placeholder="Sina Hatami" formControlName="username">
+                        <ng-container
+                            *ngIf="username.invalid && (username.dirty || username.touched || submitSelected)">
+                            <mat-error *ngIf="username.errors.required">
+                                Please enter a username
+                            </mat-error>
+                            <mat-error *ngIf="username.errors.maxlength">
+                                username must be at max {{ username.errors.maxlength.requiredLength }} characters long.
+                                but
+                                {{ username.errors.maxlength.actualLength }} characters long.
+                            </mat-error>
+                        </ng-container>
+                    </mat-form-field>
+
+                    <mat-form-field class="mt-1">
+                        <mat-label>password</mat-label>
+                        <input matInput placeholder="Sina Hatami" formControlName="password">
+                        <ng-container
+                            *ngIf="password.invalid && (password.dirty || password.touched || submitSelected)">
+                            <mat-error *ngIf="password.errors.required">
+                                Please enter a password
+                            </mat-error>
+                            <mat-error *ngIf="password.errors.maxlength">
+                                password must be at max {{ password.errors.maxlength.requiredLength }} characters long.
+                                but
+                                {{ password.errors.maxlength.actualLength }} characters long.
+                            </mat-error>
+                        </ng-container>
+                    </mat-form-field>
+
+                </form>
+
+                <button (click)="onLogin()" mat-mini-fab class="fab-secondary mt-3" color="secondary">submit
+                </button>
+
+            </mat-card>
+        </div>
+
+    </div>
+
+</div> -->

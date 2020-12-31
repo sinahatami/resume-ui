@@ -1,50 +1,46 @@
-<div class="body">
+<div class="h-100">
+  <div class="body">
 
-    <div class="body-blog">
+    <div class="container-fluid">
+      <div class="row">
 
-        <mat-card>
+        <mat-card class="post-body" *ngIf="model">
+          <ng-container *ngFor="let item of model; let i = index">
 
-            <div class="post">
 
-                <ng-container *ngFor="let item of model; let i = index">
+            <div class="header-post text-center">
 
-                    <div class="post-body-border mt-3">
+              <h2>{{ item.title }}</h2>
 
-                        <div class="post-body">
-
-                            <div class="header-post text-center">
-
-                                <h2>{{ item.title }}</h2>
-
-                            </div>
-
-                            <div class="post-img">
-                                <img [src]="item.image" [alt]="item.title">
-                            </div>
-
-                            <div class="post-description text-left">
-                                <p>{{ item.description }}</p>
-                            </div>
-
-                            <div class="post-footer text-right">
-                                <button (click)="onClickPost(item.id)" class="download-btn" mat-flat-button
-                                    color="primary">download CV
-                                </button>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </ng-container>
-
-                <mat-paginator (page)="page($event)" class="mt-4" [length]="40" [pageSize]="resultsPerPage"
-                    [pageSizeOptions]="[10, 20, 30, 40]">
-                </mat-paginator>
             </div>
 
+            <div class="post-img">
+              <img [src]="item.image" [alt]="item.title">
+            </div>
+
+            <div class="post-description text-left ml-1">
+              <p>{{ item.description }}</p>
+            </div>
+
+            <div class="post-footer text-right">
+              <button (click)="onClickPost(item._id)" class="download-btn" mat-flat-button color="primary">
+              more info
+              <fa-icon [icon]="faForward"></fa-icon>
+            </button>
+            </div>
+
+            <div class="publish-date text-left ml-1">
+              <small>{{ item.publishDate }}</small>
+            </div>
+
+
+          </ng-container>
+          <mat-paginator (page)="page($event)" class="mt-4" [length]="40" [pageSize]="resultsPerPage" [pageSizeOptions]="[10, 20, 30, 40]">
+          </mat-paginator>
         </mat-card>
 
+      </div>
     </div>
 
+  </div>
 </div>

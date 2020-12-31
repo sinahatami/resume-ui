@@ -31,8 +31,8 @@ export class ContactComponent implements OnInit {
 
   submitSelected: boolean = false
   submit = () => {
-    this.submitSelected = true
     if (!this.form.valid) {
+      this.submitSelected = true
       return this.toastr.error('Operation encountered an error, Please fill the form correctly', 'Faild', {
         positionClass: 'toast-center-center',
         disableTimeOut: true
@@ -45,7 +45,7 @@ export class ContactComponent implements OnInit {
         disableTimeOut: true
       }
       this.submitSelected = false
-      this.form.reset()
+      this.form.clearValidators()
     }, _ => this.toastr.error('Operation encountered an error, Please try again later', 'Faild', {
       positionClass: 'toast-center-center',
       disableTimeOut: true

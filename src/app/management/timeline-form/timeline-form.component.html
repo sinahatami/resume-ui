@@ -1,0 +1,39 @@
+<ngx-smart-modal (onAnyCloseEvent)="hideModal()" #timelineModal identifier="timelineModal">
+  <h1>Timeline</h1>
+
+  <div class="form" [formGroup]="form" [class.disabledTab]="formType == 'View'">
+    <div class="col-sm-12">
+      <mat-form-field>
+        <mat-label>date</mat-label>
+        <input matInput type="text" placeholder="plear enter date" formControlName="date">
+        <ng-container *ngIf="date && date.invalid && (date.dirty || date.touched || submitSelected)">
+          <mat-error *ngIf="date &&  date.errors.required">
+            Please enter a tidatetle
+          </mat-error>
+          <mat-error *ngIf="date && date.errors.maxlength">
+            date must be at max {{ date.errors.maxlength.requiredLength }} characters long. but {{ date.errors.maxlength.actualLength }} characters long.
+          </mat-error>
+        </ng-container>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-12">
+      <mat-form-field>
+        <mat-label>description</mat-label>
+        <textarea matInput placeholder="description" formControlName="description"></textarea>
+        <ng-container *ngIf="description.invalid && (description.dirty || description.touched || submitSelected)">
+          <mat-error *ngIf="description.errors.required">
+            Please enter a description
+          </mat-error>
+          <mat-error *ngIf="description.errors.maxlength">
+            description must be at max {{ description.errors.maxlength.requiredLength }} characters long. but {{ description.errors.maxlength.actualLength }} characters long.
+          </mat-error>
+        </ng-container>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <footer>
+    <button (click)="saveMethod()" class="" mat-flat-button color="primary">Save</button>
+    <button (click)="hideModal()" class="ml-2" mat-flat-button color="warn">Cancel</button>
+  </footer>
+</ngx-smart-modal>

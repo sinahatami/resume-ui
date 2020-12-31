@@ -1,40 +1,38 @@
 <div>
 
-    <div class="header">
+  <div class="header">
 
-        <p class="first-header">Get to know me</p>
-        <h2 class="second-header" data-aos="fade-top">About Me</h2>
-        <div class="animated-bar"></div>
+    <p class="first-header">Get to know me</p>
+    <h2 class="second-header" data-aos="fade-top">About Me</h2>
+    <div class="animated-bar"></div>
 
-    </div>
+  </div>
 
-    <div class="body">
+  <div class="body">
 
-        <div class="container">
-            <div class="row">
+    <div class="container">
+      <div class="row">
 
-                <div class="col-sm-5">
-                    <div class="img">
-                        <img [src]="personalImg" alt="personal image" data-aos="fade-right">
-                    </div>
-                </div>
+        <div class="col-sm-5">
+          <div class="img">
+            <img [src]="personalImg" alt="personal image" data-aos="fade-right">
+          </div>
+        </div>
 
-                <div class="col-sm-7 right-side" data-aos="fade-left">
+        <div class="col-sm-7 right-side" data-aos="fade-left">
 
-                    <h2 class="right-side-first-header">Who am i?</h2>
+          <h2 class="right-side-first-header">Who am i?</h2>
 
-                    <h6 class="right-side-second-header">I'm Emma Smith, a visual UX/UI Designer and Web Developer</h6>
+          <h6 class="right-side-second-header">I'm Emma Smith, a visual UX/UI Designer and Web Developer</h6>
 
-                    <div class="right-side-description">
-                        <p class="explan-text">
-                            I am a freelancer based in the United Kingdom and i have been building noteworthy UX/UI
-                            designs and websites for years, which comply with the latest design trends. I help convert a
-                            vision and an idea into meaningful and useful products. Having a sharp eye for product
-                            evolution helps me prioritize tasks, iterate fast and deliver faster.
-                        </p>
-                    </div>
+          <div class="right-side-description">
+            <p class="explan-text">
+              I am a freelancer based in the United Kingdom and i have been building noteworthy UX/UI designs and websites for years, which comply with the latest design trends. I help convert a vision and an idea into meaningful and useful products. Having a sharp
+              eye for product evolution helps me prioritize tasks, iterate fast and deliver faster.
+            </p>
+          </div>
 
-                    <address>
+          <address>
                         <div class="container">
 
                             <div class="row">
@@ -72,50 +70,37 @@
                         </div>
                     </address>
 
-                    <div class="d-flex align-items-center">
-                        <a href='../../../../assets/files/7-october-1907-persian.pdf' download>
-                            <button (click)="downloadResume()" class="download-btn" mat-flat-button color="success"
-                                data-aos="fade-top">download CV
-                            </button>
-                        </a>
+          <div class="about-footer d-flex align-items-center">
+            <a href='../../../../assets/files/resume-cv.pdf' download>
+              <button class="download-btn" mat-flat-button color="success" data-aos="fade-top">
+                download CV
+              </button>
+            </a>
 
-                        <ul class="list-unstyled list-inline contact-list">
+            <ul class="list-unstyled list-inline contact-list">
 
-                            <li class="list-inline-item">
-                                <a href="">
-                                    <fa-icon [icon]="faInstagram"></fa-icon>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="">
-                                    <fa-icon [icon]="faInstagram"></fa-icon>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="">
-                                    <fa-icon [icon]="faInstagram"></fa-icon>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="">
-                                    <fa-icon [icon]="faInstagram"></fa-icon>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="">
-                                    <fa-icon [icon]="faInstagram"></fa-icon>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-
-                </div>
-
-            </div>
+              <li class="list-inline-item">
+                <fa-icon style="color: red" [icon]="faMailBulk" (click)="navigate('mail')">
+                </fa-icon>
+              </li>
+              <li class="list-inline-item">
+                <fa-icon style="color: #5682A3;" [icon]="faTelegram" (click)="navigate('linkedin')"></fa-icon>
+              </li>
+              <li class="list-inline-item">
+                <fa-icon style="color: #0C66C2;" [icon]="faLinkedin" (click)="navigate('linkedin')"></fa-icon>
+              </li>
+              <li class="list-inline-item">
+                <fa-icon [icon]="faGithub" (click)="navigate('github')"></fa-icon>
+              </li>
+            </ul>
+          </div>
 
         </div>
 
+      </div>
+
     </div>
+
+  </div>
 
 </div>
